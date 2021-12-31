@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'ABSTERRegular';
+  src: url('ABSTERRegular.eot');
+  src: url('ABSTERRegular.eot?#iefix') format('embedded-opentype'),
+       url('ABSTERRegular.svg#ABSTERRegular') format('svg'),
+       url('ABSTERRegular.ttf') format('truetype'),
+       url('ABSTERRegular.woff') format('woff'),
+       url('ABSTERRegular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,332 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+body{font-family: 'Roboto', 'Noto Sans KR', sans-serif;}
+*{margin: 0; padding: 0;}
+
+#fp-nav ul{margin: 70px;}
+#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span{
+    width: 15px;    height: 15px;
+    margin: -8px -8px;
+    border-radius: 100%;
+    background-color: palevioletred;
+}
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+    border-radius: 50%;
+    position: absolute;
+    width: 6px;    height: 6px;
+    border: 0;
+    background: #fff;
+    left: 50%;    top: 50%;
+    margin: -2px 0 0 -3px;
+}
+
+/* *-*-*-*-*-*-* 모바일 버튼 *-*-*-*-*-*-* */
+.m_btn{
+    width: 50px;    height: 50px; 
+    position: fixed; 
+    top: 60px;    right: 40px; 
+    transform: translateY(-50%);
+    z-index: 120;
+}
+.m_btn .line{
+    display: block; 
+    width: 100%;    height: 100%; 
+}
+
+/* *---*---*---* 햄버거 버튼 *---*---*---* */
+.m_btn .line span{                  /* 중앙 span */
+    display: block; 
+    width: 20px;    height: 3.5px; 
+    background: #fff; 
+    position: absolute; 
+    top: 50%;    left: 0; 
+    transform: translateY(-50%); 
+    transition: all 0.3s ease;
+
+    width: 30px; height: 3px; 
+}
+.m_btn .line span:before{           /* 상단 span */
+    content: ''; 
+    width: 40px;    height: 3px;
+    background: #fff; 
+    position: absolute; 
+    top: -14px;    left: 0;
+    transition: all 0.3s ease;
+}
+.m_btn .line span:after{            /* 하단 span */
+    content: ''; 
+    width: 40px;    height: 3px;
+    background: #fff;
+    position: absolute; 
+    top: 14px;    left: 0;
+    transition: all 0.3s ease;
+}
+/* *---*---*---* 햄버거 X 버튼 *---*---*---* */
+.m_btn .line.on span{               /* 중앙 span */
+    background: rgba(0, 0, 0, 0);
+    transition: all 0.3s ease;
+}
+.m_btn .line.on span:before{        /* 상단 span */
+    transform: rotate(45deg); 
+    top: 0;
+    transition: all 0.3s ease;
+}
+.m_btn .line.on span:after{         /* 하단 span */
+    transform: rotate(-45deg); 
+    top: 0;
+    transition: all 0.3s ease;
+}
+
+/* *---*---*---* 커버 영역 *---*---*---* */
+.cover{
+    position: fixed;
+    width: 100%;    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 120;
+    display: none;
+}
+.cover.on{
+    display: block;
+}
+
+/* *---*---*---* 풀페이지 메뉴 영역 *---*---*---* */
+#full_p_menu h1{
+    font-size: 6em; 
+    text-align: center; 
+    color: rgb(255, 206, 214); 
+    font-weight: 700;
+}
+#full_p_menu .footer .tit{
+    float: left; 
+    font-size: 12px; 
+    line-height: 40px;
+}
+#full_p_menu .footer .copy{
+    float: right; 
+    font-size: 12px; 
+    line-height: 40px;
+}
+#full_p_menu .contact .tit{
+    text-align: center;
+}
+#full_p_menu .contact .tit h1{
+    margin-bottom: 50px;
+    position: relative;
+}
+#full_p_menu .contact .tit h1:before{
+    content: '';
+    width: 120px;     height: 5px; 
+    background: tomato; 
+    position: absolute; 
+    left: 50%;    top: 120%; 
+    transform: translateX(-50%);
+} 
+#full_p_menu .contact .tit p{
+    color: lightgreen; 
+    font-size: 40px; 
+    margin-top: 20px;
+}
+#full_p_menu .contact .tit .mail{
+    line-height: 50px; 
+    color: skyblue; 
+    font-size: 35px;
+}
+
+/* *---*---*---* 헤더 영역 *---*---*---* */
+header{
+    position: absolute;
+    left:0;    top:0;
+    width: 100%;    height:60px;
+    box-sizing:border-box; 
+    z-index: 10;
+}
+header.on{
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+}
+header ul{
+    display: flex; 
+    margin: 60px 25px;
+}
+header ul> li{ 
+    margin: 0 10px;
+}
+header ul> li> a{
+    display: block;
+    line-height: 60px;
+    color: #fff;
+    font-size: 17px;
+    transition: all 0.3s; 
+    margin-right: 10px;
+}
+header ul> li> a:hover{
+    color: gold; 
+}
+/* header ul>li.on>a{color: lightskyblue;} */
+
+/* *---*---*---* 메뉴 영역 *---*---*---* */
+.menu_wrap{
+    width: 700px;    height: 765px;
+    background: #fff; 
+    position: fixed; 
+    left: 50%;    top: 50%;
+    transform: translate(-50%, -50%); 
+    transition: all 0.5s; 
+    box-sizing: border-box; 
+    padding: 60px 50px; 
+    z-index: 120;
+    opacity: 0; 
+}
+.menu_wrap.on{
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+.menu_wrap .menu_list{
+    overflow: hidden; 
+    box-sizing: border-box;
+}
+.menu_wrap .menu_list> li{}
+.menu_wrap .menu_list> li> a{
+    display: block; 
+    height: 80px; 
+    color: lightsteelblue; 
+    font-size: 40px;
+    font-weight: 700;
+    transition: all 0.3s; 
+    position: relative; 
+    margin: 5px 0 0 15px;
+}
+.menu_wrap .menu_list> li> a::before{
+    content: '';
+    width: 0%;    height: 15px;
+    position: absolute;
+    left: -15%;    top: 40%;
+    transform: translateY(-50%);
+    background: lemonchiffon; 
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+.menu_wrap .menu_list> li> a:hover::before{ 
+    width: 55%;
+}
+.menu_wrap .jw_contact{
+    float: right; 
+    position: relative; 
+    border-left: 7px solid gold; 
+    position: absolute; 
+    top: 50%;    left: 62%; 
+    transform: translateY(-50%); 
+    margin-top: 295px; 
+    padding: 7px 20px; 
+    box-sizing: border-box;
+}
+.menu_wrap .jw_contact .me{
+    color: lightseagreen; 
+    line-height: 20px;
+}
+.menu_wrap .jw_contact .me{
+    font-size: 15px;
+}
+.menu_wrap .menu_list> li:first-child:hover> a{
+    color: lightpink;
+}
+.menu_wrap .menu_list> li:nth-child(2):hover> a{
+    color: lightsalmon;
+}
+.menu_wrap .menu_list> li:nth-child(3):hover> a{
+    color: khaki;
+}
+.menu_wrap .menu_list> li:nth-child(4):hover> a{
+    color: lightgreen;
+}
+.menu_wrap .menu_list> li:nth-child(5):hover> a{
+    color: skyblue;
+}
+.menu_wrap .menu_list> li:nth-child(6):hover> a{
+    color: dodgerblue;
+}
+.menu_wrap .menu_list> li:last-child:hover> a{
+    color: mediumpurple;
+}
+
+/* *---*---*---* 컨텍트 영역 *---*---*---* */
+.contact{
+    position: relative;
+}
+.contact .contact_inner{
+    width: 1200px;    height: 864px;
+    margin: 0 auto;
+    padding: 80px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#contact .contact_inner .form{
+    width: 50%;    height: auto;
+    float: left;
+    box-sizing: border-box;
+}
+#contact .contact_inner .form .txt{
+    margin-bottom: 40px;
+}
+#contact .contact_inner .form .txt li{
+    line-height: 40px;
+    font-size: 25px;
+    font-weight: bold;
+}
+#contact .contact_inner .form .txt .seoul{
+    color: lightsalmon;
+}
+#contact .contact_inner .form .txt .phone{
+    color: lightgreen;
+}
+#contact .contact_inner .form .txt .mail{
+    color: lightskyblue;
+}
+fieldset label{
+    font-size: 15px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+    color: gold;
+    color: cy;
+}
+fieldset legend{
+    text-indent: -99999px;
+}
+fieldset input{
+    width: 500px;    height: 40px;
+    margin-bottom: 40px;
+    border: 1px solid khaki;
+    background: rgba(255, 255, 255, 0.5);
+    text-indent: 10px;
+    outline: none;
+}
+fieldset input::placeholder{
+    color: #f3f3f3;
+}
+.msg_box{
+    width: 500px;    height: 100px;
+    text-indent: 10px;
+    border: 1px solid khaki;
+    background: rgba(255, 255, 255, 0.5);
+    margin-bottom: 67px;
+    color:#f3f3f3;
+    outline: none;
+}
+.send{
+    width: 230px;    height: 40px;
+    border: 1px solid #c7c7c7;
+    font-size: 15px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+.map{
+    width: 400px;    height: 500px;
+    float: right;
+    box-sizing: border-box;
+}
+.map_canvas iframe{
+    width: 100%;
+}
